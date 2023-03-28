@@ -1,4 +1,4 @@
-import { APP_INITIAL_STATE, SET_INCLUDE_LOWER_CASE, SET_PASSWORD, SET_PASSWORD_LENGTH } from "../constants";
+import {  SET_INCLUDE_LOWER_CASE, SET_PASSWORD, SET_PASSWORD_LENGTH } from "../constants";
 import { PasswordState } from "../constants/types";
 interface Action {
     type: string,
