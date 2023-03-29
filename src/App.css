@@ -35,4 +35,52 @@ input[type=range]{
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: fit-content;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: hsl(248, 10%, 15%);
+  border: 2px solid hsl(252, 11%, 91%);
+}
+.checkmark::after{
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check-container:hover input~.checkmark {
+  border-color: hsl(127, 100%, 82%);
 
+}
+.check-container input:checked~.checkmark {
+  background-color: hsl(127, 100%, 82%);
+  border: 2px solid hsl(127, 100%, 82%);
+}
+.check-container input:checked~.checkmark::after{
+  display: block;
+}
+.check-container .checkmark:after {
+  left: 0.3rem;
+  top: 0.1rem;
+  width: 7px;
+  height: 11px;
+  border: solid hsl(248, 10%, 15%);
+  color: hsl(248, 15%, 11%);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
