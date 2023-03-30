@@ -10,4 +10,5 @@ export interface PasswordState {
     numbers: number | string,
     symbols: string | null,
     passwordLength: string | number | null,
+    rangeValue: string 
 }

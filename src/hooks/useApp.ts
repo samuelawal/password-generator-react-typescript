@@ -17,9 +17,10 @@ export default function useApp() {
   const handlePasswordLengthChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
+    const rangeValuetoPercentage =( Number(e.target.value)/20 * 100).toString()
     dispatch({
       type: SET_PASSWORD_LENGTH,
-      payload: { passwordLength: e.target.value },
+      payload: { passwordLength: e.target.value, rangeValue: rangeValuetoPercentage },
     });
   };
 
@@ -35,17 +36,15 @@ export default function useApp() {
 
   const generatePassword = () => {
     const { passwordLength } = state;
-   
+
     let charset: string = "";
     if (state.includeLowercase) charset += state.lowercaseCharacters;
     if (state.includeUppercase) charset += state.uppercaseCharacters;
     if (state.includeNumbers) charset += state.numbers;
     if (state.includeSymbols) charset += state.symbols;
-    let myPassword: string = ''
+    let myPassword: string = "";
     for (let i = 0; i < passwordLength; i++) {
-      myPassword += charset.charAt(
-        Math.floor(Math.random() * charset.length)
-      );
+      myPassword += charset.charAt(Math.floor(Math.random() * charset.length));
       console.log(state.password);
     }
     dispatch({ type: SET_PASSWORD, payload: { password: myPassword } });

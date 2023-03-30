@@ -1,5 +1,5 @@
 import { PageContainer, PasswordResultContainer, PasswordContainer} from "./styles/homepageStyle"
-
+import {useState} from 'react'
 
 import PasswordCharacterLenght from "./passwordCharacterLenght"
 import OptionsPassword from "./optionsPassword"
@@ -7,11 +7,12 @@ import useApp from "../hooks/useApp"
 
 
 const Homepage = () => {
-    const {password, generatePassword, includeLowercase, includeNumbers, includeUppercase, includeSymbols,handlePasswordLengthChange, passwordLength, handleLowerCaseChange, handleNumberChange, handleSymbolsChange, handleUpperCaseChange} = useApp()
+    const {password, rangeValue, generatePassword, includeLowercase, includeNumbers, includeUppercase, includeSymbols,handlePasswordLengthChange, passwordLength, handleLowerCaseChange, handleNumberChange, handleSymbolsChange, handleUpperCaseChange} = useApp()
+  
     return (
             <PageContainer>
                 <main className="main-container">
-                <h1>Password Generator</h1> 
+                <h1 className="password_header">Password Generator</h1> 
                 <PasswordResultContainer>
                 <span className='password-placeholder'>{!!password ? password : 'P4$5W0rD!'}</span>
                 <div className='copy-icon'>
@@ -19,7 +20,7 @@ const Homepage = () => {
             </div>
                 </PasswordResultContainer>
                 <PasswordContainer>
-                    <PasswordCharacterLenght {...{handlePasswordLengthChange, passwordLength}}/>
+                    <PasswordCharacterLenght {...{handlePasswordLengthChange, passwordLength, rangeValue}}/>
                     <OptionsPassword {...{includeLowercase, includeNumbers, includeSymbols, includeUppercase, handleLowerCaseChange, handleSymbolsChange, handleUpperCaseChange, handleNumberChange}}/>
                     <button onClick={generatePassword}>Generate Password</button>
                 </PasswordContainer>

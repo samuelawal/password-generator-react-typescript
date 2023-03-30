@@ -6,6 +6,7 @@ export const APP_INITIAL_STATE: PasswordState = {
   includeNumbers: true,
   includeSymbols: false,
   password: "",
+  rangeValue: '50',
   lowercaseCharacters: "abcdefghijklmnopqrstuvwxyz",
   uppercaseCharacters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   numbers: "0123456789",

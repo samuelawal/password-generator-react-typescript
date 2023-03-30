@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=JetBrains+Mono&display=swap');
 :root {
   --primary-color: hsl(252, 11%, 91%);
   --fs-sm: 1.125rem;
 }
 body {
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: 'JetBrains Mono', sans-serif;
+  font-size: 1.8rem;
   background-color: #08070B;
   color: var(--primary-color);
   font-size: var(--fs-sm);
+}
+.password_header{
+  color: hsl(251, 9%, 53%);
 }
 .main-container{
   display: flex;
@@ -71,6 +75,13 @@ input[type=range]{
 }
 .check-container input:checked~.checkmark::after{
   display: block;
+  
+}
+input[type=checkbox] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 .check-container .checkmark:after {
   left: 0.3rem;
@@ -83,4 +94,13 @@ input[type=range]{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.char-length-slider {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 4px;
+  background: hsl(248, 15%, 11%);
+  background-image: linear-gradient(hsl(127, 100%, 82%), hsl(127, 100%, 82%));
+  background-repeat: no-repeat;
 }
