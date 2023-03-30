@@ -1,5 +1,4 @@
 import { PageContainer, PasswordResultContainer, PasswordContainer} from "./styles/homepageStyle"
-import {useState} from 'react'
 
 import PasswordCharacterLenght from "./passwordCharacterLenght"
 import OptionsPassword from "./optionsPassword"
