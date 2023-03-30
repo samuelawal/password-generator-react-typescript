@@ -1,16 +1,16 @@
 import { PasswordState } from "./types";
 export const APP_INITIAL_STATE: PasswordState = {
   loading: true,
-  includeLowercase: false,
+  includeLowercase: true,
   includeUppercase: false,
-  includeNumbers: false,
+  includeNumbers: true,
   includeSymbols: false,
   password: "",
   lowercaseCharacters: "abcdefghijklmnopqrstuvwxyz",
   uppercaseCharacters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   numbers: "0123456789",
   symbols: "!@#$%^&*()_+-={}[]|\\:;\"'<>,.?/",
-  passwordLength: 0,
+  passwordLength: 10,
 };
 export const SET_PASSWORD: string = "set_password";
 export const SET_INCLUDE_LOWER_CASE: string = "set_include_lower_case";
